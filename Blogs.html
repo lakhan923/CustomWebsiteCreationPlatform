@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebDevCo - Blog | Insights and Updates</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <meta
+      name="description"
+      content="Read the latest insights, updates, and tips from WebDevCo's blog. Stay informed on web design, development, and more."
+    />
+    <meta
+      name="keywords"
+      content="web design, web development, SEO, e-commerce, responsive design, digital marketing"
+    />
+    <meta name="author" content="WebDevCo" />
+    <!-- Font Awesome CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      crossorigin="anonymous"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=kumbh+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* General Styles */
+      body {
+        box-sizing: border-box;
+        color: #333;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .container {
+        width: 85%;
+        margin: 0 auto;
+        max-width: 1200px;
+      }
+
+      /* Hero Section Styles */
+      .hero {
+        background-image: url("images/blog-header-photo.jpg");
+        background-size: cover;
+        background-position: center;
+        color: black;
+        padding: 8rem 1rem;
+        text-align: center;
+      }
+
+      .hero_content h1 {
+        font-size: 3rem;
+        margin-bottom: 0.5rem;
+        background-image: linear-gradient(to top, #f39c12 0%, #f39c12 100%);
+        background-size: 100%;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -moz-text-fill-color: transparent;
+      }
+
+      .blog_p {
+        font-size: 1.3rem;
+        font-style: oblique;
+      }
+
+      /* Main Content Styles */
+      .blog_main {
+        padding: 5rem 0;
+      }
+
+      .blog_container {
+        display: flex;
+        gap: 2rem;
+      }
+
+      .blog_post {
+        flex: 4;
+        background-color: #fff;
+        padding: 3rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .blog_title {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .blog_date {
+        font-size: 1rem;
+        color: #777;
+        margin-bottom: 1rem;
+      }
+
+      .author {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1em;
+      }
+
+      .author_image {
+        width: 60px; /* Increased size for better visibility */
+        height: 60px;
+        border-radius: 50%;
+        margin-right: 0.8em; /* Slightly more space between image and text */
+        object-fit: cover; /* Ensures image covers the circle without distortion */
+        border: 2px solid #e0e0e0; /* Adds a subtle border around the image */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Adds a shadow for depth */
+      }
+
+      .author_name {
+        font-weight: bold;
+        font-size: 0.9em;
+      }
+
+      .blog_image {
+        width: 100%;
+        height: auto;
+        margin-bottom: 1rem;
+        border-radius: 8px;
+        overflow: hidden;
+        cursor: pointer;
+        transition: box-shadow 0.4s ease-in-out;
+      }
+
+      .blog_image:hover {
+        box-shadow: 0 0 25px black, 0 0 50px black, 0 0 100px black;
+      }
+
+      .blog_content {
+        font-size: 1.2rem;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+      }
+
+      .blog_content h2 {
+        font-size: 2rem;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        color: #222;
+      }
+
+      .blog_content h3 {
+        font-size: 1.5rem;
+        margin-top: 1.5rem;
+        margin-bottom: 0.75rem;
+        color: #333;
+      }
+
+      .blog_content ul {
+        list-style-type: disc;
+        padding-left: 2rem;
+      }
+
+      .blog_content ul li {
+        margin-bottom: 0.5rem;
+      }
+
+      .blog_content strong {
+        font-weight: 700;
+        color: #333;
+      }
+      /* readmore button */
+      .read_more {
+        background-color: #0066cc;
+        color: white;
+        border: none;
+        padding: 0.5em 1em;
+        font-size: 1em;
+        cursor: pointer;
+        margin-bottom: 6em;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+      }
+
+      .read_more:hover {
+        background-color: #004c99;
+      }
+
+      /* Sidebar Styles */
+      .blog_sidebar {
+        flex: 1;
+        background-color: #f4f4f4;
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .search_bar {
+        display: flex;
+        align-items: center;
+        margin-bottom: 2rem;
+      }
+
+      .search_bar input[type="text"] {
+        padding: 0.5rem;
+        font-size: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        flex: 1;
+      }
+
+      .search_bar input[type="text"]:focus {
+        outline: none;
+        border-color: #f39c12;
+      }
+
+      .search_bar button {
+        padding: 0.5rem 1rem;
+        background-color: #f39c12;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .search_bar button:hover {
+        background-color: #e67e22;
+      }
+
+      .search_bar button i {
+        font-size: 1rem;
+      }
+
+      .sidebar_section {
+        margin-bottom: 2rem;
+      }
+
+      .sidebar_title {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        border-bottom: 2px solid #333;
+        padding-bottom: 0.5rem;
+      }
+
+      .recent_posts,
+      .categories {
+        list-style: none;
+        padding: 0;
+      }
+
+      .recent_posts li,
+      .categories li {
+        margin-bottom: 0.5rem;
+      }
+
+      .recent_posts a,
+      .categories a {
+        color: #333;
+        font-size: 1rem;
+        text-decoration: none;
+      }
+
+      .recent_posts a:hover,
+      .categories a:hover {
+        color: #f39c12;
+        text-decoration: underline;
+      }
+
+      /* Calendar Styles */
+
+      /* Calendar Heading Styles */
+      .calendar_title {
+        font-size: 1.5rem;
+        color: #333;
+        margin-top: 20rem;
+      }
+
+      #calendar {
+        width: 100%;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      .fc-toolbar {
+        background-color: #f4f4f4;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .fc-toolbar-title {
+        font-size: 1.2rem; /* Adjust title font size */
+      }
+
+      .fc-toolbar-button {
+        font-size: 0.9rem; /* Adjust button font size */
+        padding: 0.4rem 0.8rem; /* Adjust button padding */
+      }
+
+      .fc-prev-button,
+      .fc-next-button {
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        background-color: #fff;
+      }
+
+      .fc-prev-button:hover,
+      .fc-next-button:hover {
+        background-color: #e0e0e0;
+      }
+
+      /* newsletter */
+      .newsletter_description {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        color: #555;
+      }
+
+      .newsletter_form {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .newsletter_form input[type="email"] {
+        padding: 0.5rem;
+        font-size: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        width: 100%;
+      }
+
+      .newsletter_form input[type="email"]:focus {
+        outline: none;
+        border-color: #f39c12;
+      }
+
+      .newsletter_form button {
+        padding: 0.5rem;
+        background-color: #f39c12;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background-color 0.3s;
+      }
+
+      .newsletter_form button:hover {
+        background-color: #e67e22;
+      }
+
+      .privacy_note {
+        font-size: 0.9rem;
+        color: #777;
+        margin-top: 1rem;
+      }
+
+      .feedback {
+        margin-top: 1rem;
+        font-size: 0.9rem;
+        color: #f39c12; /* Feedback color (optional) */
+      }
+
+      /* Container for social media section */
+      .sidebar_section.social_media {
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Title of the social media section */
+      .sidebar_section.social_media h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1em;
+        color: #333;
+      }
+
+      /* Container for social icons */
+      .social_icons {
+        display: flex;
+        justify-content: center; /* Center icons horizontally */
+        gap: 1em; /* Space between icons */
+      }
+
+      /* Style for each social icon link */
+      .social_icon--link {
+        color: #f39c12; /* Set icon color to black */
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        font-size: 2rem; /* Adjust the size of icons */
+        transition: color 0.3s, transform 0.3s; /* Smooth transition for color and transform changes */
+      }
+
+      /* Hover effect for social icons */
+      .social_icon--link:hover {
+        color: #333; /* Darker shade on hover */
+        transform: scale(1.1); /* Slightly enlarge icon on hover */
+      }
+
+      /* Ensure icon color is applied */
+      .social_icon--link i {
+        color: inherit; /* Inherit color from the parent link */
+        transition: color 0.3s, transform 0.3s;
+      }
+
+      @media screen and (max-width: 768px) {
+        .hero {
+          padding: 8rem 1rem;
+        }
+
+        .hero_content h1 {
+          font-size: 1.5rem; /* Adjusted for better readability on tablets */
+        }
+
+        .hero_content p {
+          font-size: 1.2rem;
+        }
+
+        .blog_main {
+          padding: 1rem 0;
+        }
+
+        .blog_container {
+          flex-direction: column;
+          gap: 1rem;
+          margin-top: 2rem; /* Ensure this space is visually appealing */
+        }
+
+        .blog_post {
+          padding: 1.5rem;
+        }
+
+        .blog_title {
+          font-size: 1.75rem;
+        }
+
+        .blog_content {
+          font-size: 1rem;
+        }
+
+        .blog_sidebar {
+          padding: 1.5rem;
+        }
+
+        .sidebar_title {
+          font-size: 1.2rem;
+        }
+
+        .recent_posts a,
+        .categories a {
+          font-size: 0.9rem; /* Slightly larger for readability */
+        }
+
+        .search_bar input[type="text"] {
+          padding: 0.5rem 0.8rem;
+          font-size: 0.9rem;
+        }
+
+        .search_bar button {
+          padding: 0.5rem 0.8rem;
+          font-size: 0.9rem;
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        .hero {
+          padding: 6rem 1rem;
+        }
+
+        .hero_content h1 {
+          font-size: 1.2rem; /* Slightly increased for mobile readability */
+        }
+
+        .hero_content p {
+          font-size: 1rem;
+        }
+
+        .blog_post {
+          padding: 1rem;
+        }
+
+        .blog_sidebar {
+          padding: 1.5rem;
+          margin-top: 1rem; /* Add margin for separation from content */
+        }
+
+        .blog_title {
+          font-size: 1.2rem;
+        }
+
+        .blog_content {
+          font-size: 0.9rem;
+        }
+
+        .sidebar_title {
+          font-size: 1.1rem;
+        }
+
+        .recent_posts a,
+        .categories a {
+          font-size: 0.85rem;
+        }
+
+        .search_bar input[type="text"] {
+          padding: 0.45rem 0.75rem;
+          font-size: 0.85rem;
+        }
+
+        .search_bar button {
+          padding: 0.45rem 0.75rem;
+          font-size: 0.9rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- navbar section -->
+    <nav class="navbar">
+      <div class="navbar_container">
+        <a href="index.html" id="navbar_logo"
+          ><i class="fas fa-gem"></i> WebDevCo
+        </a>
+        <div class="navbar_toggle" id="mobile-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <ul class="navbar_menu">
+          <li class="navbar_item">
+            <a href="index.html" class="navbar_links">Home</a>
+          </li>
+          <li class="navbar_item">
+            <a href="about.html" class="navbar_links">About</a>
+          </li>
+          <li class="navbar_item">
+            <a href="services.html" class="navbar_links">Services</a>
+          </li>
+          <li class="navbar_item">
+            <a href="portfolio.html" class="navbar_links">Portfolio</a>
+          </li>
+          <li class="navbar_item">
+            <a href="contact.html" class="navbar_links">Contact</a>
+          </li>
+          <li class="navbar_item">
+            <a href="Blogs.html" class="navbar_links">Blogs</a>
+          </li>
+          <li class="navbar_btn">
+            <a href="dashboard.php" class="button">Admin Dashboard</a>
+          </li>
+          <li class="navbar_btn">
+            <a href="bookAppointment.html" class="button"
+              >Book an Appointment</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero_content">
+        <h1>Welcome to My Blog</h1>
+      </div>
+    </section>
+
+    <!-- Main Content Section -->
+    <main class="blog_main container">
+      <div class="blog_container">
+        <!-- Blog Post -->
+        <article class="blog_post">
+          <!-- Article 1: Understanding Responsive Design -->
+          <p class="blog_p">
+            Explore my latest insights and updates in web design and
+            development.
+          </p>
+          <article>
+            <h1 class="blog_title">Understanding Responsive Design</h1>
+            <p class="blog_date">August 2, 2024</p>
+
+            <!-- Author Name and Profile Icon -->
+            <div class="author">
+              <img
+                src="images/profile.jpeg"
+                alt="Author Profile"
+                class="author_image"
+              />
+              <p class="author_name">by Laiba Khan</p>
+            </div>
+
+            <img
+              src="images/blog_responsive_design.jpg"
+              alt="Responsive Design"
+              class="blog_image"
+            />
+            <!-- Content Before "Read More" -->
+            <div class="blog_content">
+              <p>
+                Responsive design is an approach to web design that makes web
+                pages render well on a variety of devices and window or screen
+                sizes. It involves using flexible grid layouts, flexible images,
+                and media queries to ensure that a website looks good and
+                functions properly on desktops, tablets, and smartphones.
+              </p>
+              <!-- Hidden Content -->
+              <div class="more_content" style="display: none">
+                <p>
+                  The key to responsive design is fluid grids. By using
+                  percentage-based widths instead of fixed pixel values, the
+                  layout adapts to the screen size. Media queries allow the
+                  website to adjust its style based on the characteristics of
+                  the device, such as its width, height, and orientation.
+                </p>
+                <p>
+                  For developers and designers, implementing responsive design
+                  means more work initially, but it ultimately leads to a better
+                  user experience and a more accessible website. The goal is to
+                  create a seamless experience across all devices, ensuring
+                  users can easily navigate and interact with the content.
+                </p>
+              </div>
+            </div>
+            <!-- Read More Button -->
+            <button class="read_more">Read More</button>
+          </article>
+
+          <!-- Article 2: The Future of Web Design -->
+          <article>
+            <h2 class="blog_title">The Future of Web Design</h2>
+            <p class="blog_date">August 5, 2024</p>
+
+            <!-- Author Name and Profile Icon -->
+            <div class="author">
+              <img
+                src="images/profile.jpeg"
+                alt="Author Profile"
+                class="author_image"
+              />
+              <p class="author_name">by Laiba Khan</p>
+            </div>
+
+            <img
+              src="images/Future-of-Web-Designing.jpg"
+              alt="The Future of Web Design"
+              class="blog_image"
+            />
+
+            <!-- Content Before "Read More" -->
+            <div class="blog_content">
+              <h3>Introduction</h3>
+              <p>
+                The world of web design is constantly evolving, driven by
+                technological advancements, user preferences, and emerging
+                trends. As we move further into 2024, web designers are tasked
+                with balancing aesthetics, functionality, and user experience to
+                create websites that stand out in a crowded digital landscape.
+                This article explores the future of web design, highlighting key
+                trends and innovations shaping the industry.
+              </p>
+              <!-- Hidden Content -->
+              <div class="more_content" style="display: none">
+                <h3>1. AI and Machine Learning in Web Design</h3>
+                <p>
+                  Artificial Intelligence (AI) and Machine Learning (ML) are
+                  revolutionizing web design by automating tasks, personalizing
+                  user experiences, and enhancing creativity.
+                </p>
+                <ul>
+                  <li>
+                    <strong>Automated Design Tools:</strong> Tools like Adobe
+                    Sensei and Wix ADI use AI to generate design layouts based
+                    on user preferences and content, streamlining the design
+                    process for non-designers.
+                  </li>
+                  <li>
+                    <strong>Personalized User Experiences:</strong> AI analyzes
+                    user behavior to deliver personalized content,
+                    recommendations, and layouts, increasing engagement and
+                    satisfaction.
+                  </li>
+                  <li>
+                    <strong>AI-Driven Analytics:</strong> AI tools analyze user
+                    interactions to provide insights into user behavior,
+                    enabling designers to make data-driven design decisions.
+                  </li>
+                </ul>
+
+                <h3>2. Responsive and Adaptive Design</h3>
+                <p>
+                  With mobile devices accounting for a significant portion of
+                  web traffic, responsive and adaptive design remains crucial.
+                </p>
+                <ul>
+                  <li>
+                    <strong>Mobile-First Design:</strong> Designers prioritize
+                    mobile devices by creating layouts optimized for small
+                    screens and enhancing user experiences on smartphones and
+                    tablets.
+                  </li>
+                  <li>
+                    <strong>Adaptive Design:</strong> Adaptive design goes
+                    beyond responsiveness, adjusting layouts based on specific
+                    devices, user preferences, and environmental conditions.
+                  </li>
+                  <li>
+                    <strong>Fluid Grids and Flexible Images:</strong> Fluid
+                    grids and flexible images ensure that websites adapt
+                    smoothly to various screen sizes and resolutions.
+                  </li>
+                </ul>
+
+                <h3>3. Voice User Interfaces (VUI)</h3>
+                <p>
+                  Voice search and smart assistants are reshaping how users
+                  interact with websites, prompting the integration of Voice
+                  User Interfaces (VUI).
+                </p>
+                <ul>
+                  <li>
+                    <strong>Voice Search Optimization:</strong> Websites are
+                    being optimized for voice search to improve accessibility
+                    and search engine rankings.
+                  </li>
+                  <li>
+                    <strong>Conversational Design:</strong> Integrating
+                    conversational interfaces into websites allows for more
+                    natural user interactions through voice commands and
+                    queries.
+                  </li>
+                  <li>
+                    <strong>Accessibility Improvements:</strong> Voice
+                    interfaces enhance accessibility for users with
+                    disabilities, providing alternative methods for navigation
+                    and content consumption.
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- Read More Button -->
+            <button class="read_more">Read More</button>
+          </article>
+
+          <!-- Article 3: SEO Tips for 2024 -->
+          <article>
+            <h2 class="blog_title">SEO Tips for 2024</h2>
+            <p class="blog_date">August 5, 2024</p>
+
+            <!-- Author Name and Profile Icon -->
+            <div class="author">
+              <img
+                src="images/profile.jpeg"
+                alt="Author Profile"
+                class="author_image"
+              />
+              <p class="author_name">by Laiba Khan</p>
+            </div>
+
+            <img
+              src="images/blog-seo.jpg"
+              alt="SEO Tips for 2024"
+              class="blog_image"
+            />
+
+            <!-- Content Before "Read More" -->
+            <div class="blog_content">
+              <h3>Introduction</h3>
+              <p>
+                Search Engine Optimization (SEO) continues to be a critical
+                aspect of digital marketing. As search engines evolve and user
+                behavior changes, staying updated with the latest SEO strategies
+                is essential. This article provides valuable tips to enhance
+                your SEO efforts in 2024.
+              </p>
+              <!-- Hidden Content -->
+              <div class="more_content" style="display: none">
+                <h3>
+                  1. Focus on E-A-T (Expertise, Authoritativeness,
+                  Trustworthiness)
+                </h3>
+                <p>
+                  Search engines prioritize content that demonstrates expertise,
+                  authoritativeness, and trustworthiness. Enhancing E-A-T can
+                  improve your site's credibility and ranking.
+                </p>
+                <ul>
+                  <li>
+                    <strong>Expertise:</strong> Ensure your content is created
+                    by subject matter experts with relevant credentials.
+                  </li>
+                  <li>
+                    <strong>Authoritativeness:</strong> Build your site’s
+                    authority through high-quality backlinks and reputable
+                    references.
+                  </li>
+                  <li>
+                    <strong>Trustworthiness:</strong> Establish trust with users
+                    through transparent practices, secure connections, and clear
+                    contact information.
+                  </li>
+                </ul>
+
+                <h3>2. Optimize for User Experience (UX)</h3>
+                <p>
+                  Google increasingly values user experience as a ranking
+                  factor. Improving UX can lead to better engagement and lower
+                  bounce rates.
+                </p>
+                <ul>
+                  <li>
+                    <strong>Page Speed:</strong> Ensure fast loading times to
+                    keep users engaged and reduce bounce rates.
+                  </li>
+                  <li>
+                    <strong>Mobile-Friendliness:</strong> Optimize your site for
+                    mobile devices to accommodate users on various screens.
+                  </li>
+                  <li>
+                    <strong>Intuitive Navigation:</strong> Design clear and
+                    user-friendly navigation to help visitors find information
+                    easily.
+                  </li>
+                </ul>
+
+                <h3>3. Embrace Structured Data</h3>
+                <p>
+                  Structured data helps search engines understand your content
+                  and enhances your site's visibility through rich snippets.
+                </p>
+                <ul>
+                  <li>
+                    <strong>Schema Markup:</strong> Implement schema markup to
+                    provide search engines with detailed information about your
+                    content.
+                  </li>
+                  <li>
+                    <strong>Rich Snippets:</strong> Use structured data to
+                    generate rich snippets, which can improve click-through
+                    rates and visibility.
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- Read More Button -->
+            <button class="read_more">Read More</button>
+          </article>
+
+          <!-- Article 4: How to Build an E-commerce Site -->
+          <article>
+            <h2 class="blog_title">How to Build an E-commerce Site</h2>
+            <p class="blog_date">August 5, 2024</p>
+
+            <!-- Author Name and Profile Icon -->
+            <div class="author">
+              <img
+                src="images/profile.jpeg"
+                alt="Author Profile"
+                class="author_image"
+              />
+              <p class="author_name">by Laiba Khan</p>
+            </div>
+
+            <img
+              src="images/blog-ecommerce.jpg"
+              alt="How to Build an E-commerce Site"
+              class="blog_image"
+            />
+
+            <!-- Content Before "Read More" -->
+            <div class="blog_content">
+              <h3>Introduction</h3>
+              <p>
+                Building an e-commerce site requires careful planning and
+                execution to ensure a seamless shopping experience for
+                customers. This article provides a comprehensive guide to
+                creating a successful e-commerce website.
+              </p>
+              <!-- Hidden Content -->
+              <div class="more_content" style="display: none">
+                <h3>1. Choose the Right Platform</h3>
+                <p>
+                  Selecting the right e-commerce platform is crucial for your
+                  site’s functionality and growth.
+                </p>
+                <ul>
+                  <li>
+                    <strong>Platform Options:</strong> Consider popular
+                    platforms like Shopify, WooCommerce, and Magento based on
+                    your needs and budget.
+                  </li>
+                  <li>
+                    <strong>Customization:</strong> Choose a platform that
+                    allows for customization to match your brand and
+                    functionality requirements.
+                  </li>
+                </ul>
+
+                <h3>2. Design a User-Friendly Interface</h3>
+                <p>
+                  A well-designed interface enhances user experience and
+                  encourages conversions.
+                </p>
+                <ul>
+                  <li>
+                    <strong>Navigation:</strong> Create an intuitive navigation
+                    system to help users find products easily.
+                  </li>
+                  <li>
+                    <strong>Responsive Design:</strong> Ensure your site is
+                    mobile-friendly to accommodate users across different
+                    devices.
+                  </li>
+                  <li>
+                    <strong>Product Presentation:</strong> Use high-quality
+                    images, detailed descriptions, and customer reviews to
+                    showcase products effectively.
+                  </li>
+                </ul>
+
+                <h3>3. Implement Secure Payment Options</h3>
+                <p>
+                  Offering secure payment methods is essential for building
+                  trust and ensuring safe transactions.
+                </p>
+                <ul>
+                  <li>
+                    <strong>Payment Gateways:</strong> Integrate reputable
+                    payment gateways like PayPal, Stripe, or Square to process
+                    transactions securely.
+                  </li>
+                  <li>
+                    <strong>SSL Certificates:</strong> Implement SSL
+                    certificates to encrypt data and protect customers' personal
+                    and payment information.
+                  </li>
+                </ul>
+
+                <h3>4. Optimize for SEO</h3>
+                <p>
+                  SEO optimization can improve your site's visibility and
+                  attract organic traffic.
+                </p>
+                <ul>
+                  <li>
+                    <strong>Keyword Research:</strong> Use relevant keywords in
+                    product descriptions, titles, and meta tags to enhance
+                    search engine ranking.
+                  </li>
+                  <li>
+                    <strong>On-Page SEO:</strong> Optimize page titles,
+                    headings, and URLs for better search engine visibility.
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- Read More Button -->
+            <button class="read_more">Read More</button>
+          </article>
+        </article>
+
+        <!-- Sidebar -->
+        <aside class="blog_sidebar">
+          <div class="search_bar">
+            <input type="text" placeholder="Search..." aria-label="Search" />
+            <button type="button" aria-label="Search button">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+
+          <div class="sidebar_section">
+            <h2 class="sidebar_title">Recent Posts</h2>
+            <ul class="recent_posts">
+              <li><a href="#future-web-design">The Future of Web Design</a></li>
+              <li><a href="#seo-tips">SEO Tips for 2024</a></li>
+              <li>
+                <a href="#ecommerce-site">How to Build an E-commerce Site</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="sidebar_section">
+            <h2 class="sidebar_title">Categories</h2>
+            <ul class="categories">
+              <li><a href="services.html">Design</a></li>
+              <li><a href="services.html">Development</a></li>
+              <li><a href="services.html">SEO</a></li>
+              <li><a href="services.html">Marketing</a></li>
+            </ul>
+          </div>
+
+          <!-- newsletter section -->
+          <div class="sidebar_section">
+            <h2 class="sidebar_title">Newsletter Signup</h2>
+            <p class="newsletter_description">
+              Stay updated with the latest news, blog posts, and exclusive
+              offers. Subscribe to our newsletter!
+            </p>
+
+            <form
+              class="newsletter_form"
+              action="blog_subscribe.php"
+              method="post"
+            >
+              <input
+                type="email"
+                name="email"
+                placeholder="Enter your email address"
+                aria-label="Email Address"
+                required
+              />
+              <button type="submit">Subscribe</button>
+            </form>
+
+            <p class="privacy_note">
+              We respect your privacy. Your email address will not be shared or
+              sold.
+            </p>
+
+            <div id="newsletter_feedback" class="feedback"></div>
+          </div>
+
+          <!-- Calendar Section -->
+          <div class="sidebar_section">
+            <h2 class="sidebar_title calendar_title">Calendar</h2>
+            <div id="calendar"></div>
+          </div>
+
+          <!-- side bar icons -->
+          <div class="sidebar_section social_media">
+            <h2>Follow Us</h2>
+            <div class="social_icons">
+              <a
+                href="https://www.facebook.com/"
+                class="social_icon--link"
+                target="_blank"
+              >
+                <i class="fab fa-facebook"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/"
+                class="social_icon--link"
+                target="_blank"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/laiba-khan-a0484a27b/"
+                class="social_icon--link"
+                target="_blank"
+              >
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a
+                href="https://x.com/"
+                class="social_icon--link"
+                target="_blank"
+              >
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a
+                href="https://github.com/"
+                class="social_icon--link"
+                target="_blank"
+              >
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- FullCalendar CSS -->
+          <link
+            href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css"
+            rel="stylesheet"
+          />
+
+          <!-- FullCalendar JS -->
+          <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
+
+          <script>
+            document.addEventListener("DOMContentLoaded", function () {
+              var calendarEl = document.getElementById("calendar");
+              var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: "dayGridMonth",
+                headerToolbar: {
+                  left: "prev,next",
+                  center: "title",
+                  right: "dayGridMonth,timeGridWeek,timeGridDay",
+                },
+                events: [],
+              });
+              calendar.render();
+            });
+          </script>
+        </aside>
+      </div>
+    </main>
+
+    <!-- footer section -->
+    <div class="footer_container">
+      <div class="footer_links">
+        <div class="footer_link--wrapper">
+          <div class="footer_link--items">
+            <h2>About Us</h2>
+            <a href="/bookAppointment.html">How it works</a>
+            <a href="/">Terms of services</a>
+          </div>
+          <div class="footer_link--items">
+            <h2>Contact Us</h2>
+            <a href="contact.html">Contact</a>
+            <a href="contact.html">Destinations</a>
+          </div>
+        </div>
+        <div class="footer_link--wrapper">
+          <div class="footer_link--items">
+            <h2>Portfolio</h2>
+            <a href="portfolio.html">My Projects</a>
+          </div>
+          <div class="footer_link--items">
+            <h2>Social Media</h2>
+            <a href="https://www.instagram.com/">Instagram</a>
+            <a href="https://www.linkedin.com/in/laiba-khan-a0484a27b/"
+              >LinkedIn</a
+            >
+            <a href="https://www.facebook.com/">Facebook</a>
+            <a href="https://x.com/">Twitter</a>
+            <a href="https://www.youtube.com/">Youtube</a>
+          </div>
+        </div>
+      </div>
+      <div class="social_media">
+        <div class="social_media--wrap">
+          <div class="footer_logo">
+            <a href="/" id="footer_logo"><i class="fas fa-gem"></i>WebDevCo</a>
+          </div>
+          <p class="website_rights">© WebDevCo 2024. All rights reserved</p>
+          <div class="social_icons">
+            <a
+              href="https://www.facebook.com/"
+              class="social_icon--link"
+              target="_blank"
+            >
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/"
+              class="social_icon--link"
+              target="_blank"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/laiba-khan-a0484a27b/"
+              class="social_icon--link"
+              target="_blank"
+            >
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://x.com/" class="social_icon--link" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a
+              href="https://www.youtube.com/"
+              class="social_icon--link"
+              target="_blank"
+            >
+              <i class="fab fa-youtube"></i>
+            </a>
+            <a
+              href="https://github.com/"
+              class="social_icon--link"
+              target="_blank"
+            >
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      // Function to toggle read more content
+      document.querySelectorAll(".read_more").forEach((button) => {
+        button.addEventListener("click", function () {
+          // Find the next sibling .more_content div
+          const moreContent =
+            this.previousElementSibling.querySelector(".more_content");
+
+          // Toggle the display property
+          if (
+            moreContent.style.display === "none" ||
+            moreContent.style.display === ""
+          ) {
+            moreContent.style.display = "block";
+            this.textContent = "Read Less"; // Change button text
+          } else {
+            moreContent.style.display = "none";
+            this.textContent = "Read More"; // Change button text
+          }
+        });
+      });
+    </script>
+    <script src="scripts.js"></script>
+  </body>
+</html>

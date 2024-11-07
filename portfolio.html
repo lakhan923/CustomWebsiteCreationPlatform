@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Laiba Khan - Web Developer Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <meta
+      name="description"
+      content="Explore the portfolio of Laiba Khan, a skilled web developer specializing in creating beautiful and functional websites. See projects and contact details."
+    />
+
+    <!-- Font Awesome CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      crossorigin="anonymous"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=kumbh+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --bg-color: #080808;
+        --second-bg-color: #131313;
+        --text-color: #ffffff;
+        --main-color: #ff8177;
+      }
+
+      /* Ensure the .portfolio section uses Flexbox for centering */
+      .portfolio {
+        background-color: #141414;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Ensure the .portfolio_container is centered and properly aligned */
+      .portfolio_container {
+        max-width: 1300px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      span {
+        color: var(--main-color);
+      }
+
+      .text-content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Align items to the start of the container */
+      }
+
+      .s_icons {
+        display: flex;
+        justify-content: flex-start;
+        gap: 10px;
+        margin: 20px 0;
+      }
+
+      .s_icons a {
+        display: inline-flex; /* Center icon inside the circle */
+        justify-content: center; /* Center icon horizontally */
+        align-items: center; /* Center icon vertically */
+        width: 3.5rem; /* Circle diameter */
+        height: 3.5rem; /* Circle diameter */
+        background: transparent; /* Transparent background */
+        border: 2px solid var(--main-color); /* Border color */
+        font-size: 2.5rem; /* Font size for the icon */
+        border-radius: 50%; /* Perfectly round shape */
+        color: var(--main-color); /* Icon color */
+        margin: 3rem 1.5rem; /* Margin around the icon */
+        transition: 0.3s ease-in-out; /* Smooth transition for hover effects */
+        text-decoration: none; /* Remove underline from the link */
+        box-sizing: border-box; /* Include padding and border in element's width and height */
+      }
+
+      .s_icons a:hover {
+        color: var(--text-color); /* Change icon color on hover */
+        transform: scale(1.3) translateY(-5px); /* Scale and move up on hover */
+        box-shadow: 0 0 25px var(--main-color); /* Add shadow on hover */
+        background-color: var(
+          --main-color
+        ); /* Change background color on hover */
+      }
+
+      .btn-group {
+        display: flex;
+        gap: 1.5rem;
+        align-items: center;
+      }
+
+      .btn {
+        display: inline-flex;
+        padding: 1rem 2.8rem;
+        background-color: var(--main-color);
+        box-shadow: 0 0 25px var(--main-color);
+        border-radius: 4rem;
+        font-size: 1.6rem;
+        color: black;
+        border: 2px solid transparent;
+        letter-spacing: 0.1rem;
+        font-weight: 600;
+        transition: 0.3s ease-in-out;
+        cursor: pointer;
+      }
+
+      .btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 50px var(--main-color);
+      }
+
+      .btn-group a:nth-of-type(2) {
+        background-color: black;
+        color: var(--main-color);
+        border: 2px solid var(--main-color);
+        box-shadow: 0 0 25px transparent;
+      }
+
+      .btn-group a:nth-of-type(2):hover {
+        box-shadow: 0 0 25px var(--main-color);
+        background-color: var(--main-color);
+        color: black;
+      }
+
+      .portfolio-img-container {
+        width: 350px;
+        height: 350px;
+        border-radius: 50%;
+        overflow: hidden;
+        box-shadow: 0 0 100px var(--main-color);
+        cursor: pointer;
+        transition: box-shadow 0.4s ease-in-out;
+        margin-left: auto;
+        margin-top: -30%;
+      }
+
+      .portfolio-img-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .portfolio-img-container:hover {
+        box-shadow: 0 0 25px var(--main-color), 0 0 50px var(--main-color),
+          0 0 100px var(--main-color);
+      }
+
+      .photo {
+        border-radius: 80%;
+      }
+
+      .portfolio_container h1 {
+        font-size: 5rem;
+        font-weight: 600;
+        margin-top: 1.5rem;
+        line-height: 1;
+      }
+
+      .portfolio_container p {
+        font-size: 1.3rem;
+        font-weight: 500;
+        line-height: 1.8;
+        max-width: 1000px;
+      }
+
+      .project_1,
+      .project_2,
+      .project_3 {
+        margin-top: 50px; /* Space above each project section */
+        max-width: 900px; /* Limit max width for better layout */
+        margin-left: auto; /* Center align */
+        margin-right: auto; /* Center align */
+        padding: 0; /* Remove padding */
+        background-color: transparent; /* No background color */
+        border-radius: 0; /* No rounded corners */
+        box-shadow: none; /* No shadow */
+        overflow: visible; /* Ensure content is visible */
+      }
+
+      .project_1 p,
+      .project_2 p,
+      .project_3 p {
+        font-size: 1.3rem; /* Font size for descriptions */
+        font-weight: 400; /* Normal font weight */
+        color: white; /* Lighter text color for description */
+        text-align: left; /* Center text */
+        margin-bottom: 20px; /* Space below text */
+      }
+
+      .project_1 h2,
+      .project_2 h2,
+      .project_3 h2 {
+        font-size: 2rem; /* Larger font size for headings */
+        font-weight: bold; /* Bold for emphasis */
+        color: white; /* Dark color for readability */
+        text-align: center; /* Center text */
+        margin: 1rem 0; /* Consistent spacing around headings */
+      }
+
+      .features-list {
+        list-style: none;
+        padding-left: 0;
+        margin: 20px auto;
+        max-width: 800px;
+      }
+
+      .features-list li {
+        margin-bottom: 10px; /* Space between list items */
+        font-size: 1.3rem; /* Standard font size */
+        color: white; /* Slightly darker color for list items */
+        position: relative; /* Position relative for before content */
+        padding-left: 30px; /* Add padding to left for checkmark */
+      }
+
+      .features-list li::before {
+        content: "✔";
+        color: #ff8177;
+        font-size: 1.3rem;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .gallery-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        padding: 40px 0;
+      }
+
+      .gallery-item {
+        flex: 1 1 calc(33.333% - 40px); /* Three items per row, adjust as needed */
+        max-width: calc(
+          33.333% - 40px
+        ); /* Limit max width for responsive layout */
+        box-sizing: border-box; /* Include padding and border in width and height */
+        border-radius: 8px; /* Rounded corners for images */
+        overflow: hidden; /* Ensure image corners match container */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Initial shadow */
+      }
+
+      .gallery-item:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .img-wrapper {
+        width: 100%;
+        overflow: hidden;
+        border-radius: 8px; /* Add rounding to image corners */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow to images */
+        transition: transform 0.3s ease;
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.3s ease;
+      }
+
+      .caption {
+        text-align: center;
+        font-size: 1rem;
+        color: white;
+        margin-top: 10px; /* Space above caption */
+      }
+
+      /* Overlay Styles */
+      .image-overlay {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1000; /* On top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        background-color: rgba(
+          0,
+          0,
+          0,
+          0.8
+        ); /* Black background with opacity */
+        overflow: auto; /* Scroll if needed */
+        text-align: center;
+        padding-top: 60px; /* Position the image in the center */
+      }
+
+      .overlay-image {
+        max-width: 90%;
+        max-height: 80%;
+        margin: auto;
+      }
+
+      .close-overlay {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        color: #fff;
+        font-size: 40px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .close-overlay:hover,
+      .close-overlay:focus {
+        color: #bbb;
+      }
+
+      @media screen and (max-width: 768px) {
+        .portfolio {
+          flex-direction: column;
+          text-align: center;
+          gap: 1.5rem;
+        }
+
+        .portfolio-container {
+          padding: 0 10px;
+        }
+
+        .text-content {
+          align-items: center;
+          gap: 1.5rem;
+        }
+
+        .portfolio-img-container {
+          width: 250px;
+          height: 250px;
+          margin: 0;
+          margin-top: 0;
+        }
+
+        .portfolio h1 {
+          font-size: 2.5rem;
+        }
+
+        .portfolio-container p {
+          font-size: 0.8rem;
+        }
+
+        .btn-group {
+          flex-direction: column;
+        }
+
+        .btn {
+          font-size: 1rem;
+          padding: 0.8rem 2rem;
+        }
+
+        .gallery-item {
+          flex: 1 1 calc(50% - 20px); /* Adjust for two items per row on smaller screens */
+          max-width: calc(50% - 20px);
+        }
+
+        .gallery-item img {
+          width: 100%;
+          height: auto;
+        }
+
+        .features-list li {
+          font-size: 1.1rem;
+          text-align: left;
+        }
+
+        .s_icons {
+          justify-content: center; /* Center icons horizontally */
+          margin: 10px 0; /* Reduce margin */
+        }
+
+        .s_icons a {
+          width: 3rem; /* Adjust circle diameter */
+          height: 3rem; /* Adjust circle diameter */
+          font-size: 2rem; /* Adjust font size for the icon */
+          margin: 2rem 1rem; /* Adjust margin around the icon */
+        }
+
+        .project_1 p,
+        .project_2 p,
+        .project_3 p {
+          font-size: 1.1rem; /* Font size for descriptions */
+          font-weight: 400; /* Normal font weight */
+          color: white; /* Lighter text color for description */
+          text-align: left; /* Center text */
+          margin-bottom: 20px; /* Space below text */
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        .portfolio {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .portfolio-container {
+          padding: 0 5px;
+        }
+
+        .text-content {
+          gap: 1rem;
+        }
+
+        .portfolio-img-container {
+          width: 200px;
+          height: 200px;
+          margin: 0;
+          margin-top: 0;
+        }
+
+        .portfolio-container h1 {
+          font-size: 2.5rem;
+        }
+
+        .portfolio-container p {
+          font-size: 1rem;
+        }
+
+        .btn-group {
+          flex-direction: column;
+        }
+
+        .btn {
+          font-size: 1.2rem;
+          padding: 0.6rem 1.5rem;
+        }
+
+        .gallery-item {
+          flex: 1 1 100%; /* Full width on very small screens */
+          max-width: 100%;
+        }
+
+        .gallery-item img {
+          width: 100%;
+          height: auto;
+        }
+
+        .features-list li {
+          font-size: 0.8rem;
+        }
+
+        .s_icons {
+          align-items: center; 
+        }
+
+        .s_icons a {
+          width: 2.5rem; /* Adjust circle diameter */
+          height: 2.5rem; /* Adjust circle diameter */
+          font-size: 1.75rem; /* Adjust font size for the icon */
+          margin: 1.5rem 0; /* Adjust margin around the icon */
+        }
+
+        .project_1 p,
+        .project_2 p,
+        .project_3 p {
+          font-size: 1.1rem; /* Font size for descriptions */
+          font-weight: 400; /* Normal font weight */
+          color: white; /* Lighter text color for description */
+          text-align: left; /* Center text */
+          margin-bottom: 20px; /* Space below text */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- navbar section -->
+    <nav class="navbar">
+      <div class="navbar_container">
+        <a href="index.html" id="navbar_logo"><i class="fas fa-gem"></i> WebDevCo </a>
+        <div class="navbar_toggle" id="mobile-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <ul class="navbar_menu">
+          <li class="navbar_item">
+            <a href="index.html" class="navbar_links">Home</a>
+          </li>
+          <li class="navbar_item">
+            <a href="about.html" class="navbar_links">About</a>
+          </li>
+          <li class="navbar_item">
+            <a href="services.html" class="navbar_links">Services</a>
+          </li>
+          <li class="navbar_item">
+            <a href="portfolio.html" class="navbar_links">Portfolio</a>
+          </li>
+          <li class="navbar_item">
+            <a href="contact.html" class="navbar_links">Contact</a>
+          </li>
+          <li class="navbar_item">
+            <a href="Blogs.html" class="navbar_links">Blogs</a>
+          </li>
+          <li class="navbar_btn">
+            <a href="dashboard.php" class="button">Admin Dashboard</a>
+          </li>
+          <li class="navbar_btn">
+            <a href="bookAppointment.html" class="button"
+              >Book an Appointment</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <section class="portfolio">
+      <div class="portfolio_container">
+        <div class="text-content">
+          <h1>Hi, It's <br /><span>Laiba khan</span></h1>
+          <p>
+            A 26-year-old, passionate web developer with a knack for creating
+            beautiful and functional websites. With experience in HTML, CSS,
+            JavaScript, and various frameworks. <br />
+            I bring creativity and technical expertise to every project.
+          </p>
+          <p>
+            Feel free to explore my portfolio and see some of the projects I've
+            worked on.
+          </p>
+
+          <div class="s_icons">
+            <a
+              href="https://www.linkedin.com/in/laiba-khan-a0484a27b/"
+              class="social_icon--link"
+              target="_blank"
+            >
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a
+              href="https://github.com/"
+              class="social_icon--link"
+              target="_blank"
+            >
+              <i class="fab fa-github"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/"
+              class="social_icon--link"
+              target="_blank"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://x.com/" class="social_icon--link" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </div>
+
+          <div class="btn-group">
+            <a href="https://github.com/lakhan923/Laiba_Cv" class="btn">
+              Resume</a
+            >
+            <a href="contact.html" class="btn"> Contact me</a>
+          </div>
+
+          <div class="portfolio-img-container">
+            <div class="photo">
+              <img
+                src="images/profile.jpeg"
+                alt="Profile picture of Laiba Khan, web developer"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- project 1 -->
+        <div class="project_1">
+          <h2>Project 1</h2>
+        </div>
+
+        <div class="gallery-container">
+          <div class="gallery-item">
+            <div class="img-wrapper">
+              <img
+                src="images/Home_page.png"
+                alt="Image 1"
+                onclick="openOverlay(this)"
+              />
+            </div>
+            <div class="caption">Home page</div>
+          </div>
+          <div class="gallery-item">
+            <div class="img-wrapper">
+              <img
+                src="images/Home_page_down_view.png"
+                alt="Image 2"
+                onclick="openOverlay(this)"
+              />
+            </div>
+            <div class="caption">Home page down view</div>
+          </div>
+          <div class="gallery-item">
+            <div class="img-wrapper">
+              <img
+                src="images/Cakes_page.png"
+                alt="Image 3"
+                onclick="openOverlay(this)"
+              />
+            </div>
+            <div class="caption">Cakes page</div>
+          </div>
+          <div class="gallery-item">
+            <div class="img-wrapper">
+              <img
+                src="images/Contact_information_page.png"
+                alt="Image 4"
+                onclick="openOverlay(this)"
+              />
+            </div>
+            <div class="caption">Contact information page</div>
+          </div>
+          <div class="gallery-item">
+            <div class="img-wrapper">
+              <img
+                src="images/Example_layout_after_clicking_on_product.png"
+                alt="Image 5"
+                onclick="openOverlay(this)"
+              />
+            </div>
+            <div class="caption">Product Page</div>
+          </div>
+
+          <div class="gallery-item">
+            <div class="img-wrapper">
+              <img
+                src="images/Shop_page.png"
+                alt="Image 6"
+                onclick="openOverlay(this)"
+              />
+            </div>
+            <div class="caption">Shop page</div>
+          </div>
+
+          <!-- project 1 -->
+
+          <div class="project_1">
+            <h2>Overview</h2>
+            <p>
+              The Sweet Delights Bakery website was designed to enhance the
+              online presence of a local bakery, providing customers with an
+              elegant and intuitive platform to explore the bakery's offerings.
+              The site combines a visually appealing design with practical
+              features to improve user engagement and streamline the ordering
+              process.
+            </p>
+
+            <h2>Key Features</h2>
+
+            <ul class="features-list">
+              <li>
+                <strong>Elegant Design:</strong> The website features a
+                contemporary and clean design with high-quality images of bakery
+                products, creating a visually appealing experience for visitors.
+              </li>
+              <li>
+                <strong>Detailed Menu:</strong> Users can browse through a
+                comprehensive menu with beautiful photos and descriptions of
+                each item, making it easy to discover and select their favorite
+                baked goods.
+              </li>
+              <li>
+                <strong>Online Ordering System:</strong> A user-friendly online
+                ordering system allows customers to place orders for pickup or
+                delivery with ease. It integrates a secure payment gateway to
+                ensure a smooth transaction process.
+              </li>
+              <li>
+                <strong>Responsive Layout:</strong> The website is fully
+                responsive, providing a seamless experience across all devices,
+                including smartphones, tablets, and desktops.
+              </li>
+              <li>
+                <strong>Interactive Contact Information:</strong> An embedded
+                Google Map and an easy-to-use contact form enable customers to
+                find the bakery's location and get in touch with the team
+                effortlessly.
+              </li>
+            </ul>
+          </div>
+
+          <!-- project 2 -->
+          <div class="project_2">
+            <h2>Project 2</h2>
+            <p>
+              Here are some of the screenshots of the website that I've worked
+              on using HTML, CSS, and JavaScript.
+            </p>
+          </div>
+
+          <div class="gallery-item">
+            <div class="img-wrapper">
+              <img
+                src="images/page_1.png"
+                alt="Image 1"
+                onclick="openOverlay(this)"
+              />
+            </div>
+            <div class="caption">Page 1</div>
+          </div>
+          <div class="gallery-item">
+            <div class="img-wrapper">
+              <img
+                src="images/page_2.png"
+                alt="Image 2"
+                onclick="openOverlay(this)"
+              />
+            </div>
+            <div class="caption">Page 2</div>
+          </div>
+          <div class="gallery-item">
+            <div class="img-wrapper">
+              <img
+                src="images/page_3.png"
+                alt="Image 3"
+                onclick="openOverlay(this)"
+              />
+            </div>
+            <div class="caption">Page 3</div>
+          </div>
+
+          <div class="project_2">
+            <h2>Overview of the course project</h2>
+            <p>
+              As part of my web design course at University of Jyvaskyla, I
+              developed a basic website as a part of the course to showcase my
+              skills, and professional background. This project was an
+              opportunity to apply the principles and techniques learned
+              throughout the course and create a comprehensive online presence.
+            </p>
+          </div>
+
+          <!-- project 3 -->
+          <div class="project_3">
+            <h2>Project 3</h2>
+            <p>
+              Below are some screenshots of the website I created using
+              WordPress for a client in the legal profession.
+            </p>
+          </div>
+
+          <div class="gallery-item">
+            <div class="img-wrapper">
+              <img
+                src="images/Home_page_1.PNG"
+                alt="Image 1"
+                onclick="openOverlay(this)"
+              />
+            </div>
+            <div class="caption">Home page 1</div>
+          </div>
+          <div class="gallery-item">
+            <div class="img-wrapper">
+              <img
+                src="images/Home_page_2.PNG"
+                alt="Image 2"
+                onclick="openOverlay(this)"
+              />
+            </div>
+            <div class="caption">Home page 2</div>
+          </div>
+          <div class="gallery-item">
+            <div class="img-wrapper">
+              <img
+                src="images/Home_page_3.PNG"
+                alt="Image 3"
+                onclick="openOverlay(this)"
+              />
+            </div>
+            <div class="caption">Home page 3</div>
+          </div>
+          <div class="gallery-item">
+            <div class="img-wrapper">
+              <img
+                src="images/Home_page_4.PNG"
+                alt="Image 3"
+                onclick="openOverlay(this)"
+              />
+            </div>
+            <div class="caption">Home page 4</div>
+          </div>
+          <div class="gallery-item">
+            <div class="img-wrapper">
+              <img
+                src="images/About_us_page.PNG"
+                alt="Image 3"
+                onclick="openOverlay(this)"
+              />
+            </div>
+            <div class="caption">About Us page</div>
+          </div>
+          <div class="gallery-item">
+            <div class="img-wrapper">
+              <img
+                src="images/Practice_Areas_page.PNG"
+                alt="Image 3"
+                onclick="openOverlay(this)"
+              />
+            </div>
+            <div class="caption">Practice Areas page</div>
+          </div>
+          <div class="gallery-item">
+            <div class="img-wrapper">
+              <img
+                src="images/Attorneys_page.PNG"
+                alt="Image 3"
+                onclick="openOverlay(this)"
+              />
+            </div>
+            <div class="caption">Attorneys page</div>
+          </div>
+          <div class="gallery-item">
+            <div class="img-wrapper">
+              <img
+                src="images/Blog_page.PNG"
+                alt="Image 3"
+                onclick="openOverlay(this)"
+              />
+            </div>
+            <div class="caption">Blog/News page</div>
+          </div>
+          <div class="gallery-item">
+            <div class="img-wrapper">
+              <img
+                src="images/Contact_page.PNG"
+                alt="Image 3"
+                onclick="openOverlay(this)"
+              />
+            </div>
+            <div class="caption">Contact page</div>
+          </div>
+
+          <div class="project_3">
+            <h2>Overview of the Law Firm Website</h2>
+            <ul class="features-list">
+              <li>
+                <strong>Home:</strong> A welcoming landing page showcasing key
+                services, recent news, and contact information for immediate
+                engagement.
+              </li>
+              <li>
+                <strong>About:</strong> An informative page detailing the firm’s
+                history, mission, values, and the team’s credentials and
+                achievements.
+              </li>
+              <li>
+                <strong>Practice Areas:</strong> A comprehensive list of the
+                firm's areas of expertise, with detailed descriptions of each
+                practice area and the services offered.
+              </li>
+              <li>
+                <strong>Attorneys:</strong> Profiles of the firm's attorneys,
+                including their qualifications, areas of specialization, and
+                contact information.
+              </li>
+              <li>
+                <strong>Blog:</strong> A section for publishing articles, case
+                studies, and legal insights to inform and engage clients and
+                prospects.
+              </li>
+              <li>
+                <strong>Contact:</strong> A user-friendly contact form along
+                with the firm's address, phone number, email, and an embedded
+                map for easy navigation.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer section -->
+    <div class="footer_container">
+      <div class="footer_links">
+        <div class="footer_link--wrapper">
+          <div class="footer_link--items">
+            <h2>About Us</h2>
+            <a href="/bookAppointment.html">How it works</a>
+            <a href="/">Terms of services</a>
+          </div>
+          <div class="footer_link--items">
+            <h2>Contact Us</h2>
+            <a href="contact.html">Contact</a>
+            <a href="contact.html">Destinations</a>
+          </div>
+        </div>
+        <div class="footer_link--wrapper">
+          <div class="footer_link--items">
+            <h2>Portfolio</h2>
+            <a href="portfolio.html">My Projects</a>
+          </div>
+          <div class="footer_link--items">
+            <h2>Social Media</h2>
+            <a href="https://www.instagram.com/">Instagram</a>
+            <a href="https://www.linkedin.com/in/laiba-khan-a0484a27b/"
+              >LinkedIn</a
+            >
+            <a href="https://www.facebook.com/">Facebook</a>
+            <a href="https://x.com/">Twitter</a>
+            <a href="https://www.youtube.com/">Youtube</a>
+          </div>
+        </div>
+      </div>
+      <div class="social_media">
+        <div class="social_media--wrap">
+          <div class="footer_logo">
+            <a href="/" id="footer_logo"><i class="fas fa-gem"></i>WebDevCo</a>
+          </div>
+          <p class="website_rights">© WebDevCo 2024. All rights reserved</p>
+          <div class="social_icons">
+            <a
+              href="https://www.facebook.com/"
+              class="social_icon--link"
+              target="_blank"
+            >
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/"
+              class="social_icon--link"
+              target="_blank"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/laiba-khan-a0484a27b/"
+              class="social_icon--link"
+              target="_blank"
+            >
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://x.com/" class="social_icon--link" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a
+              href="https://www.youtube.com/"
+              class="social_icon--link"
+              target="_blank"
+            >
+              <i class="fab fa-youtube"></i>
+            </a>
+            <a
+              href="https://github.com/"
+              class="social_icon--link"
+              target="_blank"
+            >
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Overlay for the larger image view -->
+    <div id="imageOverlay" class="image-overlay">
+      <span class="close-overlay" onclick="closeOverlay()">&times;</span>
+      <img id="overlayImage" class="overlay-image" src="" alt="" />
+      <div id="overlayCaption" class="overlay-caption"></div>
+    </div>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Laiba Khan",
+        "url": "https://www.example.com",
+        "jobTitle": "Web Developer",
+        "sameAs": [
+          "https://www.linkedin.com/in/laiba-khan-a0484a27b/",
+          "https://github.com/lakhan923"
+        ]
+      }
+    </script>
+    <script src="scripts.js"></script>
+  </body>
+</html>

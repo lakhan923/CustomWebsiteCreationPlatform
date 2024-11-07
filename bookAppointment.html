@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebDevCo - Book an Appointment</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <meta
+      name="description"
+      content="Schedule a consultation or meeting with WebDevCo. Fill out the appointment form to book a time that works for you and get in touch with our team."
+    />
+    <meta
+      name="keywords"
+      content="book appointment, WebDevCo, schedule meeting, web development consultation, appointment form"
+    />
+    <meta name="author" content="WebDevCo" />
+
+    <!-- Font Awesome CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      crossorigin="anonymous"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=kumbh+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        color: #fff;
+        font-weight: 400;
+        letter-spacing: 1px;
+        background-color: #131313; /* Dark background to enhance contrast */
+      }
+
+      .container {
+        background-color: #fafafa;
+        margin: 100px auto; /* Center container horizontally */
+        box-shadow: 10px 15px 20px rgba(0, 0, 0, 0.1);
+        display: grid;
+        grid-template-columns: 50% 50%; /* Equal proportions for balanced layout */
+        border-radius: 10px;
+        overflow: hidden;
+        max-width: 1200px; /* Max width to control container size */
+        gap: 30px; /* Space between the two sections */
+        padding: 40px; /* Padding around the entire container */
+        box-sizing: border-box;
+        align-items: start; /* Align items at the start to keep layout tidy */
+      }
+
+      .container-time {
+        background-color: rgba(0, 0, 0, 0.95);
+        padding: 20%; /* Adjusted padding for more content space */
+        outline-offset: 20px; /* Adjusted offset for spacing */
+        text-align: center;
+        border-radius: 10px;
+        box-sizing: border-box;
+        position: relative;
+      }
+
+      .container-time:before {
+        content: "";
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+        border: 4px dashed #998100; /* Match outline thickness */
+        border-radius: 10px;
+        pointer-events: none;
+      }
+
+      .heading {
+        font-size: 2.5rem; /* Larger font size for prominent headings */
+        text-transform: uppercase;
+        margin: 0 0 30px; /* Spacing below the heading */
+        color: #fff;
+        line-height: 1.3; /* Better line height for readability */
+      }
+
+      .heading-days {
+        color: #998100;
+        font-size: 1.8rem; /* Increased font size for emphasis */
+        margin: 20px 0; /* Increased spacing above and below */
+        line-height: 1.4;
+      }
+
+      .heading-phone {
+        font-size: 1.4rem; /* Larger font size for additional information */
+        margin: 30px 0 0;
+        line-height: 1.5;
+      }
+
+      .container-time p {
+        margin: 15px 0; /* Increased spacing between paragraphs */
+        font-size: 1.1rem;
+        line-height: 1.6; /* Adjust line-height for better readability */
+      }
+
+      #book-appointment {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 20px;
+        color: #333; /* Darker text color for better readability */
+      }
+
+      #book-appointment h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 2.5rem; /* Larger font size for heading */
+        line-height: 1.3;
+      }
+
+      #book-appointment p {
+        text-align: center;
+        margin-bottom: 30px;
+        color: #666;
+        line-height: 1.6;
+      }
+
+      form {
+        background: #f4f4f4c0;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #333; /* Darker label color for contrast */
+      }
+
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 12px; /* Increased padding for inputs */
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-sizing: border-box;
+        font-size: 1rem; /* Larger font size for inputs */
+        line-height: 1.4;
+      }
+
+      .form-group input[type="date"],
+      .form-group input[type="time"] {
+        padding: 10px;
+      }
+
+      textarea {
+        resize: vertical;
+      }
+
+      .btn {
+        background: #ffa500;
+        color: #fff;
+        padding: 15px 20px; /* Increased padding for button */
+        text-decoration: none;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        transition: background 0.3s ease;
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+        font-size: 1.1rem; /* Larger font size for button text */
+        font-weight: 600;
+      }
+
+      .btn:hover {
+        background: #ff8800;
+      }
+
+      .contact-info {
+        margin-top: 40px;
+        padding: 20px;
+        background: #333;
+        color: #fff;
+        border-radius: 5px;
+      }
+
+      .contact-info h3 {
+        margin-bottom: 10px;
+      }
+
+      .contact-info p {
+        margin-bottom: 20px;
+      }
+
+      .contact-info ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .contact-info ul li {
+        margin-bottom: 10px;
+      }
+
+      .contact-info a {
+        color: #ffa500;
+        text-decoration: none;
+      }
+
+      .contact-info a:hover {
+        text-decoration: underline;
+      }
+
+      /* Styles for tablets and small laptops */
+      @media screen and (max-width: 768px) {
+        body {
+          background-color: #fafafa; /* Ensure black background on smaller screens */
+        }
+        .container {
+          grid-template-columns: 1fr; /* Single-column layout for narrower screens */
+          padding: 20px;
+          gap: 20px;
+        }
+
+        .container-time {
+          padding: 15%;
+        }
+
+        .heading {
+          font-size: 1.8rem; /* Slightly smaller headings for better fit */
+        }
+
+        .heading-days {
+          font-size: 1.4rem;
+        }
+
+        .heading-phone {
+          font-size: 1.1rem;
+        }
+
+        #book-appointment h2 {
+          font-size: 2rem;
+        }
+
+        .btn {
+          font-size: 1rem;
+          padding: 12px 16px; /* Adjust button padding for smaller screens */
+        }
+      }
+
+      /* Styles for mobile devices */
+      @media screen and (max-width: 480px) {
+        .container {
+          margin: 30px auto;
+          padding: 15px;
+          gap: 10px;
+        }
+
+        .container-time {
+          padding: 10%;
+        }
+
+        .heading {
+          font-size: 1.6rem; /* Smaller headings for mobile */
+        }
+
+        .heading-days {
+          font-size: 1.2rem;
+        }
+
+        .heading-phone {
+          font-size: 1rem;
+        }
+
+        .container-time p {
+          font-size: 0.9rem; /* Smaller text for readability on small screens */
+        }
+
+        #book-appointment h2 {
+          font-size: 1.8rem;
+        }
+
+        #book-appointment p {
+          font-size: 0.9rem;
+        }
+
+        .btn {
+          font-size: 0.9rem;
+          padding: 10px 14px;
+        }
+
+        .contact-info {
+          margin-top: 20px;
+          padding: 15px;
+        }
+
+        .contact-info h3 {
+          font-size: 1.2rem;
+        }
+
+        .contact-info p {
+          font-size: 0.9rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- navbar section -->
+    <nav class="navbar">
+      <div class="navbar_container">
+        <a href="index.html" id="navbar_logo"
+          ><i class="fas fa-gem"></i> WebDevCo
+        </a>
+        <div class="navbar_toggle" id="mobile-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <ul class="navbar_menu">
+          <li class="navbar_item">
+            <a href="index.html" class="navbar_links">Home</a>
+          </li>
+          <li class="navbar_item">
+            <a href="about.html" class="navbar_links">About</a>
+          </li>
+          <li class="navbar_item">
+            <a href="services.html" class="navbar_links">Services</a>
+          </li>
+          <li class="navbar_item">
+            <a href="portfolio.html" class="navbar_links">Portfolio</a>
+          </li>
+          <li class="navbar_item">
+            <a href="contact.html" class="navbar_links">Contact</a>
+          </li>
+          <li class="navbar_item">
+            <a href="Blogs.html" class="navbar_links">Blogs</a>
+          </li>
+          <li class="navbar_btn">
+            <a href="dashboard.php" class="button">Admin Dashboard</a>
+          </li>
+          <li class="navbar_btn">
+            <a href="bookAppointment.html" class="button"
+              >Book an Appointment</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Main Content Section -->
+    <section class="container">
+      <div class="container-time">
+        <h2 class="heading">Time Open</h2>
+        <h3 class="heading-days">Monday-Friday</h3>
+        <p>7am - 11am (breakfast)</p>
+        <p>11am - 10pm (Lunch/Dinner)</p>
+
+        <h3 class="heading-days">Saturday and Sunday</h3>
+        <p>9am - 1pm (breakfast)</p>
+        <p>1pm - 10pm (Lunch/Dinner)</p>
+
+        <hr />
+
+        <h4 class="heading-phone">Call Us: +358 466364833</h4>
+      </div>
+
+      <div id="book-appointment">
+        <h2>Book an Appointment</h2>
+        <p>
+          Schedule a consultation or meeting with me at your convenience. Please
+          fill out the form below, and I'll get back to you with available time
+          slots.
+        </p>
+        <form
+          id="appointment-form"
+          action="submit_appointment.php"
+          method="POST"
+        >
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required />
+          </div>
+          <div class="form-group">
+            <label for="preferred-date">Preferred Date:</label>
+            <input
+              type="date"
+              id="preferred-date"
+              name="preferred-date"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="preferred-time">Preferred Time:</label>
+            <input
+              type="time"
+              id="preferred-time"
+              name="preferred-time"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="message">Additional Information:</label>
+            <textarea id="message" name="message" rows="4"></textarea>
+          </div>
+          <button type="submit" class="btn">Submit Appointment Request</button>
+        </form>
+      </div>
+    </section>
+    <!-- footer section -->
+    <div class="footer_container">
+      <div class="footer_links">
+        <div class="footer_link--wrapper">
+          <div class="footer_link--items">
+            <h2>About Us</h2>
+            <a href="/bookAppointment.html">How it works</a>
+            <a href="/">Terms of services</a>
+          </div>
+          <div class="footer_link--items">
+            <h2>Contact Us</h2>
+            <a href="contact.html">Contact</a>
+            <a href="contact.html">Destinations</a>
+          </div>
+        </div>
+        <div class="footer_link--wrapper">
+          <div class="footer_link--items">
+            <h2>Portfolio</h2>
+            <a href="portfolio.html">My Projects</a>
+          </div>
+          <div class="footer_link--items">
+            <h2>Social Media</h2>
+            <a href="https://www.instagram.com/">Instagram</a>
+            <a href="https://www.linkedin.com/in/laiba-khan-a0484a27b/"
+              >LinkedIn</a
+            >
+            <a href="https://www.facebook.com/">Facebook</a>
+            <a href="https://x.com/">Twitter</a>
+            <a href="https://www.youtube.com/">Youtube</a>
+          </div>
+        </div>
+      </div>
+      <div class="social_media">
+        <div class="social_media--wrap">
+          <div class="footer_logo">
+            <a href="/" id="footer_logo"><i class="fas fa-gem"></i>WebDevCo</a>
+          </div>
+          <p class="website_rights">© WebDevCo 2024. All rights reserved</p>
+          <div class="social_icons">
+            <a
+              href="https://www.facebook.com/"
+              class="social_icon--link"
+              target="_blank"
+            >
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/"
+              class="social_icon--link"
+              target="_blank"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/laiba-khan-a0484a27b/"
+              class="social_icon--link"
+              target="_blank"
+            >
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://x.com/" class="social_icon--link" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a
+              href="https://www.youtube.com/"
+              class="social_icon--link"
+              target="_blank"
+            >
+              <i class="fab fa-youtube"></i>
+            </a>
+            <a
+              href="https://github.com/"
+              class="social_icon--link"
+              target="_blank"
+            >
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Laiba Khan - Web Developer | WebDevCo</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <meta
+      name="description"
+      content="Laiba Khan is a skilled web developer specializing in creating beautiful and functional websites. Based in Jyväskylä, Finland, she offers a range of web development services tailored to your needs."
+    />
+    <meta
+      name="keywords"
+      content="web developer, Laiba Khan, web development, Jyväskylä, Finland, SEO, WordPress, HTML, CSS, JavaScript, PHP, programming, web design"
+    />
+    <meta name="author" content="Laiba Khan" />
+    <!-- Font Awesome CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      crossorigin="anonymous"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=kumbh+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      .about_section {
+        background-color: #141414;
+        color: rgb(245, 245, 245);
+        padding: 40px 20px;
+      }
+
+      .about_container {
+        display: flex; /* Use flexbox for layout */
+        flex-wrap: wrap; /* Allow items to wrap when needed */
+        gap: 20px; /* Add space between items */
+        margin: 0 auto;
+        max-width: 1300px; /* Set a max width for container */
+        padding: 0 20px;
+        box-sizing: border-box;
+        width: 100%;
+      }
+
+      .about_container h1 {
+        font-size: 3rem;
+        background-color: #ff8177;
+        background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
+        background-size: 100%;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -moz-text-fill-color: transparent;
+        margin-bottom: 20px;
+        width: 100%;
+        text-align: center;
+      }
+
+      .sidebyside_text {
+        flex: 1; /* Allow text container to take remaining space */
+        text-align: justify; /* Optional: aligns text neatly */
+        min-width: 200px; /* Ensure the text container does not get too narrow */
+        padding: 10px; /* Optional: add padding around text */
+      }
+
+      .img_container {
+        flex: 0 0 35%; /* Set flex-basis to 35% of the container width */
+        max-width: 35%; /* Set max-width for the image container */
+        height: 0; /* Start with zero height */
+        padding-bottom: 35%; /* Maintain a square shape by using padding-bottom */
+        border-radius: 50%; /* Make the container circular */
+        border: 3px solid white; /* Border for styling */
+        margin-right: 5px; /* Margin to the right of the container */
+        box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        overflow: hidden; /* Hide any overflow to maintain the circle */
+        position: relative; /* Position relative for absolute children */
+        transition: box-shadow 0.4s ease-in-out;
+        box-shadow: 0 0 100px #ff8177;
+      }
+
+      .img_container:hover {
+        box-shadow: 0 0 25px #ff8177, 0 0 50px #ff8177, 0 0 100px #ff8177;
+      }
+
+      .img_container img {
+        width: 100%; /* Fill the container's width */
+        height: 100%; /* Fill the container's height */
+        display: block; /* Prevent extra space below the image */
+        border-radius: inherit; /* Inherit border-radius to make image circular */
+        object-fit: cover; /* Ensure the image covers the container without distortion */
+        position: absolute; /* Position image absolutely within the container */
+        top: 0;
+        left: 0;
+      }
+
+      p {
+        margin-bottom: 20px;
+        font-size: 1.2rem;
+        line-height: 1.6;
+      }
+
+      .about-skills {
+        list-style-type: none; /* Remove default list bullets */
+        padding-left: 0; /* Remove default padding */
+        margin-bottom: 20px; /* Space below the list */
+      }
+
+      .about-skills li {
+        margin-bottom: 10px; /* Space below list items */
+        font-size: 1rem; /* Font size for list items */
+        position: relative; /* Position relative to place custom bullet */
+        padding-left: 30px; /* Space for custom bullets */
+      }
+
+      .about-skills li::before {
+        content: "✔"; /* Custom bullet character */
+        color: #ff8177; /* Color for the custom bullet */
+        font-size: 1.2rem; /* Size of the bullet */
+        position: absolute; /* Absolute positioning */
+        left: 0; /* Align bullet to the left edge */
+        top: 50%; /* Center bullet vertically */
+        transform: translateY(
+          -50%
+        ); /* Adjust position for vertical centering */
+      }
+
+      /* Responsive Styles */
+      @media screen and (max-width: 768px) {
+        .about_container {
+          flex-direction: column; /* Stack items vertically on smaller screens */
+          align-items: cente; /* Center align items */
+        }
+
+        .sidebyside_text {
+          text-align: left; /* Center text for a better look on smaller screens */
+        }
+
+        .img_container {
+          flex: 0 0 50%; /* Increase size for larger view on tablets */
+          max-width: 50%;
+          padding-bottom: 50%; /* Adjust padding-bottom for the circular shape */
+          margin-left: 25%;
+          box-shadow: 0 0 50px #ff8177; /* Slightly reduced shadow */
+        }
+
+        .about_container h1 {
+          font-size: 2rem; /* Adjust heading size */
+        }
+
+        p {
+          font-size: 1rem; /* Adjust paragraph size */
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        .img_container {
+          flex: 0 0 70%; /* Increase size for better visibility on small screens */
+          max-width: 70%;
+          padding-bottom: 70%; /* Maintain circular shape */
+          box-shadow: 0 0 30px #ff8177; /* More reduced shadow */
+          margin-left: 50px;
+        }
+
+        .about_container {
+          padding: 0 10px; /* Reduce padding for smaller screens */
+        }
+
+        .sidebyside_text {
+          text-align: left; /* Center text */
+          padding: 10px 0; /* Adjust padding for spacing */
+        }
+
+        .about_container h1 {
+          font-size: 1.5rem; /* Further adjust heading size for very small screens */
+        }
+
+        .about-skills {
+          padding: 0; /* Remove padding */
+          text-align: left; /* Center align skills list */
+        }
+
+        p {
+          font-size: 0.85rem; /* Further adjust paragraph size */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- navbar section -->
+    <nav class="navbar">
+      <div class="navbar_container">
+        <a href="index.html" id="navbar_logo"
+          ><i class="fas fa-gem"></i> WebDevCo
+        </a>
+        <div class="navbar_toggle" id="mobile-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <ul class="navbar_menu">
+          <li class="navbar_item">
+            <a href="index.html" class="navbar_links">Home</a>
+          </li>
+          <li class="navbar_item">
+            <a href="about.html" class="navbar_links">About</a>
+          </li>
+          <li class="navbar_item">
+            <a href="services.html" class="navbar_links">Services</a>
+          </li>
+          <li class="navbar_item">
+            <a href="portfolio.html" class="navbar_links">Portfolio</a>
+          </li>
+          <li class="navbar_item">
+            <a href="contact.html" class="navbar_links">Contact</a>
+          </li>
+          <li class="navbar_item">
+            <a href="Blogs.html" class="navbar_links">Blogs</a>
+          </li>
+          <li class="navbar_btn">
+            <a href="dashboard.php" class="button">Admin Dashboard</a>
+          </li>
+          <li class="navbar_btn">
+            <a href="bookAppointment.html" class="button"
+              >Book an Appointment</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="about_section">
+      <div class="about_container">
+        <h1>About me</h1>
+
+        <div class="img_container">
+          <img src="images/profile.jpeg" alt="Laiba Khan profile" />
+        </div>
+
+        <div class="sidebyside_text">
+          <p>
+            Hello! I'm Laiba Khan, a 25-year-old web developer with a passion
+            for creating beautiful and functional websites. I am currently
+            studying Information and Communication Technology at Gradia
+            Jyväskylä, Finland, with my course expected to end on August 8,
+            2025. My background includes a diverse range of technical skills and
+            experiences that have shaped my approach to web development.
+          </p>
+
+          <p>
+            My journey in technology began with a preparatory TUVA course at
+            Gradia Jyväskylä, where I completed 38 weeks of foundational
+            education. I furthered my knowledge with the INTEGRA course at the
+            University of Jyväskylä, focusing on programming, web design, and
+            digital competence. Additionally, I undertook Finnish language
+            courses to enhance my communication skills and cultural
+            understanding.
+          </p>
+
+          <p>
+            I am a hardworking, self-starting, reliable, and well-organized
+            individual with a keen interest in continuous learning. I thrive
+            both in group settings and independently, and I am driven by the
+            desire to use my technical skills to benefit organizations and help
+            others. My goal is to develop websites that not only look great but
+            also offer an exceptional user experience.
+          </p>
+        </div>
+        <h1>Here are some of my technical skills:</h1>
+        <ul class="about-skills">
+          <li>Visual Studio and Visual studio code</li>
+          <li>Python Basics</li>
+          <li>C# Basics</li>
+          <li>Linux</li>
+          <li>Git and GitHub</li>
+          <li>Microsoft Word, PowerPoint, Excel etc</li>
+          <li>Notepad++, Sublime Text</li>
+          <li>HTML, CSS, JavaScript, PHP, jQuery</li>
+          <li>Databases</li>
+          <li>WordPress</li>
+          <li>SEO "Search Engine Optimization"</li>
+          <li>Graphical User Interfaces (Windows Form App)</li>
+        </ul>
+
+        <p>
+          In terms of website development services, my fees are designed to be
+          flexible and accommodating to different needs and budgets. I offer
+          competitive pricing based on the complexity and scope of the project.
+          Whether you need a basic business website or a fully-featured
+          e-commerce platform, I am committed to delivering high-quality work
+          that meets your specific needs and budget. Please feel free to contact
+          me for a personalized quote and to discuss how I can help bring your
+          project to life.
+        </p>
+
+        <p>
+          I take pride in my attention to detail and my commitment to delivering
+          high-quality results for every project I undertake. I'm excited to
+          continue expanding my skills and contributing to projects that make a
+          difference.
+        </p>
+      </div>
+
+      <!-- map -->
+      <div class="map_container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d290073.1790094583!2d25.323601329041068!3d62.18855129471395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46857415d1a93119%3A0xba57697d6790a2d7!2zSnl2w6Rza3lsw6Q!5e0!3m2!1sen!2sfi!4v1721745139137!5m2!1sen!2sfi"
+          width="600"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+        >
+        </iframe>
+      </div>
+    </div>
+
+    <!-- footer section -->
+    <div class="footer_container">
+      <div class="footer_links">
+        <div class="footer_link--wrapper">
+          <div class="footer_link--items">
+            <h2>About Us</h2>
+            <a href="/bookAppointment.html">How it works</a>
+            <a href="/">Terms of services</a>
+          </div>
+          <div class="footer_link--items">
+            <h2>Contact Us</h2>
+            <a href="contact.html">Contact</a>
+            <a href="contact.html">Destinations</a>
+          </div>
+        </div>
+        <div class="footer_link--wrapper">
+          <div class="footer_link--items">
+            <h2>Portfolio</h2>
+            <a href="portfolio.html">My Projects</a>
+          </div>
+          <div class="footer_link--items">
+            <h2>Social Media</h2>
+            <a href="https://www.instagram.com/">Instagram</a>
+            <a href="https://www.linkedin.com/in/laiba-khan-a0484a27b/"
+              >LinkedIn</a
+            >
+            <a href="https://www.facebook.com/">Facebook</a>
+            <a href="https://x.com/">Twitter</a>
+            <a href="https://www.youtube.com/">Youtube</a>
+          </div>
+        </div>
+      </div>
+      <div class="social_media">
+        <div class="social_media--wrap">
+          <div class="footer_logo">
+            <a href="/" id="footer_logo"><i class="fas fa-gem"></i>WebDevCo</a>
+          </div>
+          <p class="website_rights">© WebDevCo 2024. All rights reserved</p>
+          <div class="social_icons">
+            <a
+              href="https://www.facebook.com/"
+              class="social_icon--link"
+              target="_blank"
+            >
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/"
+              class="social_icon--link"
+              target="_blank"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/laiba-khan-a0484a27b/"
+              class="social_icon--link"
+              target="_blank"
+            >
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://x.com/" class="social_icon--link" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a
+              href="https://www.youtube.com/"
+              class="social_icon--link"
+              target="_blank"
+            >
+              <i class="fab fa-youtube"></i>
+            </a>
+            <a
+              href="https://github.com/"
+              class="social_icon--link"
+              target="_blank"
+            >
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>

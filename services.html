@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebDevCo - Services | Professional Web Design & Development</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <meta
+      name="description"
+      content="Explore WebDevCo's range of services including custom web design, responsive web development, e-commerce solutions, and SEO optimization to enhance your online presence."
+    />
+    <!-- Font Awesome CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      crossorigin="anonymous"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=kumbh+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        background-color: #141414; /* Black background */
+      }
+
+      /* Container for the services section */
+      #services {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 70%;
+        margin: 50px auto;
+        padding: 0 20px;
+      }
+
+      /* Heading for the services section */
+      #services h2 {
+        text-align: center;
+        margin-bottom: 10%;
+        background-color: #ff8177;
+        background-image: linear-gradient(
+          to right,
+          #ff8177 0%,
+          #ff867a 0%,
+          #ff8c7f 21%,
+          #f99185 52%,
+          #cf556c 78%,
+          #b12a5b 100%
+        );
+        background-size: 100%;
+        margin-top: 2rem;
+        font-size: 3rem;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -moz-text-fill-color: transparent;
+      }
+
+      .text {
+        color: white;
+        line-height: 1.6;
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+      }
+
+      /* General styling for each service block */
+      .service {
+        background: #f4f4f4;
+        padding: 10%;
+        margin-bottom: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s ease;
+      }
+
+      .service:hover {
+        box-shadow: 0 10px 16px rgba(0, 0, 0, 0.15);
+      }
+
+      /* Service block headings */
+      .service h3 {
+        font-size: 1.75em;
+        margin: 0 0 15px;
+        color: #222;
+        text-align: center;
+      }
+
+      /* Service block images */
+      .service img {
+        width: 100%;
+        height: auto;
+        border-radius: 4px;
+        margin-bottom: 15px;
+      }
+
+      /* Paragraph text within service blocks */
+      .service p {
+        color: black;
+        line-height: 1.6;
+        margin-bottom: 15px;
+        font-size: 1.1rem;
+      }
+
+      /* List styling within service blocks */
+      .service ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .service ul li {
+        font-size: 1.1rem;
+        color: black;
+        margin-bottom: 10px;
+        position: relative;
+        padding-left: 20px;
+      }
+
+      .service ul li::before {
+        content: "•";
+        color: #007bff;
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-size: 1.5em;
+      }
+
+      /* Feedback Section Styles */
+      .feedback-section {
+        background-color: #f4f4f4;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin: 2rem auto; /* Center the section with margin */
+        max-width: 100%; /* Limit the width of the feedback section */
+      }
+
+      .feedback-section h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: #6391f5;
+      }
+
+      .feedback-section p {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        color: #666;
+      }
+
+      .feedback-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem; /* Space between form elements */
+      }
+
+      .feedback-form label {
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+      }
+
+      .feedback-form input,
+      .feedback-form textarea {
+        padding: 0.75rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 1rem;
+      }
+
+      .feedback-form textarea {
+        resize: vertical; /* Allow vertical resizing only */
+      }
+
+      .feedback-form button {
+        padding: 0.75rem;
+        background-color: #6391f5; /* Button background color */
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        font-size: 1rem;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+      }
+
+      .feedback-form button:hover {
+        background-color: #4b52d8;
+      }
+
+      /* Responsive Design */
+      @media screen and (max-width: 768px) {
+        #services {
+          width: 90%; /* Adjust width for tablets */
+        }
+
+        #services h2 {
+          font-size: 2rem; /* Smaller font size for smaller screens */
+        }
+
+        .service {
+          padding: 4%; /* Adjust padding for better fit */
+        }
+
+        .service h3 {
+          font-size: 1.5em; /* Adjust heading size */
+        }
+
+        .service ul li {
+          font-size: 1.1em; /* Adjust list item size */
+        }
+
+        .text {
+          color: white;
+          line-height: 1.6;
+          font-size: 1rem;
+          margin-bottom: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- navbar section -->
+    <nav class="navbar">
+      <div class="navbar_container">
+        <a href="index.html" id="navbar_logo"><i class="fas fa-gem"></i> WebDevCo </a>
+        <div class="navbar_toggle" id="mobile-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <ul class="navbar_menu">
+          <li class="navbar_item">
+            <a href="index.html" class="navbar_links">Home</a>
+          </li>
+          <li class="navbar_item">
+            <a href="about.html" class="navbar_links">About</a>
+          </li>
+          <li class="navbar_item">
+            <a href="services.html" class="navbar_links">Services</a>
+          </li>
+          <li class="navbar_item">
+            <a href="portfolio.html" class="navbar_links">Portfolio</a>
+          </li>
+          <li class="navbar_item">
+            <a href="contact.html" class="navbar_links">Contact</a>
+          </li>
+          <li class="navbar_item">
+            <a href="Blogs.html" class="navbar_links">Blogs</a>
+          </li>
+          <li class="navbar_btn">
+            <a href="dashboard.php" class="button">Admin Dashboard</a>
+          </li>
+          <li class="navbar_btn">
+            <a href="bookAppointment.html" class="button"
+              >Book an Appointment</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- services section -->
+
+    <section id="services">
+      <h2>Our Professional Web Services</h2>
+      <p class="text">
+        At WebDevCo, we specialize in <strong>custom web design</strong>,
+        <strong>responsive web development</strong>,
+        <strong>e-commerce solutions</strong>, and
+        <strong>SEO optimization</strong>. Our services are tailored to help you
+        build a strong online presence and achieve your business goals.
+      </p>
+
+      <!-- Service 1: Custom Web Design -->
+      <div class="service">
+        <h3>Custom Web Design</h3>
+        <img
+          src="images/custom-webdesign.jpeg"
+          alt="Custom Web Design for various businesses"
+        />
+
+        <p>
+          I specialize in creating custom websites that are visually appealing
+          and tailored to your brand. Whether you need a simple landing page or
+          a complex multi-page website, I can design a site that effectively
+          communicates your message and engages your audience.
+        </p>
+        <ul>
+          <li>Responsive design for all devices</li>
+          <li>Brand-specific color schemes and typography</li>
+          <li>User-friendly interfaces and navigation</li>
+        </ul>
+      </div>
+
+      <!-- Service 2: Web Development -->
+      <div class="service">
+        <h3>Responsive Web Development</h3>
+        <img
+          src="images/responsive-web-development.png"
+          alt="Responsive Web Design for various businesses"
+        />
+        <p>
+          My web development services ensure that your website is built using
+          the latest technologies and best practices. I focus on creating
+          websites that are fast, secure, and easy to maintain.
+        </p>
+        <ul>
+          <li>HTML, CSS, JavaScript, and modern frameworks</li>
+          <li>Backend development with Node.js, PHP, or Python</li>
+          <li>Database integration and management</li>
+        </ul>
+      </div>
+
+      <!-- Service 3: E-Commerce Solutions -->
+      <div class="service">
+        <h3>E-Commerce Solutions</h3>
+        <img
+          src="images/ecommerce-solutions.jpg"
+          alt="E-Commerce Solutions for various businesses"
+        />
+        <p>
+          If you're looking to sell products or services online, I can help you
+          set up a fully functional e-commerce platform. From shopping carts to
+          payment gateways, I provide solutions that make online selling easy
+          and secure.
+        </p>
+        <ul>
+          <li>Customizable online storefronts</li>
+          <li>Secure payment processing</li>
+          <li>Inventory and order management systems</li>
+        </ul>
+      </div>
+
+      <!-- Service 4: SEO and Digital Marketing -->
+      <div class="service">
+        <h3>SEO Optimization</h3>
+        <img
+          src="images/SEO-optimization.png"
+          alt="SEO and Digital Marketing for various businesses"
+        />
+        <p>
+          Enhance your website's visibility and attract more visitors with my
+          SEO and digital marketing services. I employ strategies that improve
+          your site's ranking on search engines and drive traffic to your
+          business.
+        </p>
+        <ul>
+          <li>On-page and off-page SEO optimization</li>
+          <li>Keyword research and content strategy</li>
+          <li>Social media marketing and management</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Feedback Section -->
+    <section class="feedback-section">
+      <h2>We Value Your Feedback</h2>
+      <p>
+        Your feedback helps us improve our services. Please share your thoughts or suggestions below:
+      </p>
+      <form action="send_feedback.php" method="post" class="feedback-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="message">Feedback:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Submit Feedback</button>
+      </form>
+    </section>
+    <!-- footer section -->
+    <div class="footer_container">
+      <div class="footer_links">
+        <div class="footer_link--wrapper">
+          <div class="footer_link--items">
+            <h2>About Us</h2>
+            <a href="/bookAppointment.html">How it works</a>
+            <a href="/">Terms of services</a>
+          </div>
+          <div class="footer_link--items">
+            <h2>Contact Us</h2>
+            <a href="contact.html">Contact</a>
+            <a href="contact.html">Destinations</a>
+          </div>
+        </div>
+        <div class="footer_link--wrapper">
+          <div class="footer_link--items">
+            <h2>Portfolio</h2>
+            <a href="portfolio.html">My Projects</a>
+          </div>
+          <div class="footer_link--items">
+            <h2>Social Media</h2>
+            <a href="https://www.instagram.com/">Instagram</a>
+            <a href="https://www.linkedin.com/in/laiba-khan-a0484a27b/"
+              >LinkedIn</a
+            >
+            <a href="https://www.facebook.com/">Facebook</a>
+            <a href="https://x.com/">Twitter</a>
+            <a href="https://www.youtube.com/">Youtube</a>
+          </div>
+        </div>
+      </div>
+      <div class="social_media">
+        <div class="social_media--wrap">
+          <div class="footer_logo">
+            <a href="/" id="footer_logo"><i class="fas fa-gem"></i>WebDevCo</a>
+          </div>
+          <p class="website_rights">© WebDevCo 2024. All rights reserved</p>
+          <div class="social_icons">
+            <a
+              href="https://www.facebook.com/"
+              class="social_icon--link"
+              target="_blank"
+            >
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/"
+              class="social_icon--link"
+              target="_blank"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/laiba-khan-a0484a27b/"
+              class="social_icon--link"
+              target="_blank"
+            >
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://x.com/" class="social_icon--link" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a
+              href="https://www.youtube.com/"
+              class="social_icon--link"
+              target="_blank"
+            >
+              <i class="fab fa-youtube"></i>
+            </a>
+            <a
+              href="https://github.com/"
+              class="social_icon--link"
+              target="_blank"
+            >
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>
